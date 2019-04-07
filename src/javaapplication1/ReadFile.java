@@ -25,9 +25,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author Tyler.Tuo
  */
 public class ReadFile {
+    
+    
+    
+    
     public static void main(String[] args) throws FileNotFoundException, IOException{
+      
+        
+        
         DataFormatter formatter = new DataFormatter();
-       
         XSSFWorkbook wb = new XSSFWorkbook(new FileInputStream("excel.xlsx"));
         XSSFSheet sheet = wb.getSheetAt(0);
       /*  HSSFRow row = sheet.getRow(0);
@@ -40,22 +46,56 @@ public class ReadFile {
         for(Row row:sheet){
             for(Cell cell:row){
                 CellReference cellRef = new CellReference(row.getRowNum(),cell.getColumnIndex());
-                System.out.print(cellRef.formatAsString());
+                String cellLocation = cellRef.formatAsString();
+                System.out.print(cellLocation);  // the location of cells
+                String column[] = cellLocation.split("")
+                
                 System.out.print(" - ");
                 
                 
                 //get the text that appears in the cell by getting the cell value and applying  any data format..
-                String text =  formatter.formatCellValue(cell);
-                System.out.println(text);
+                String text =  formatter.formatCellValue(cell);   
+                System.out.println(text);             //get the content of cell
                 
-                //Alternatively, get the value and format it yourself
+               
+ 
+                }
+            }
+    }
+    
+      public void ChoiceAttribute(String attribute){  // use regular expression to extract the letter
+          Link TSlink = new link        
+          
+        switch(attribute){
+            case "A":
+                Tweet_Id = attribute;
+        }
+    }
+    
+    
+    
+    
+}
+        
+        
+        
+
+
+
+
+
+           /*    
+            //Alternatively, get the value and format it yourself
                 switch(cell.getCellType()){
                     case STRING:
-                        System.out.println(cell.getRichStringCellValue().getString());  
+                    {
+                        System.out.println(cell.getRichStringCellValue().getString());  }
                         break;
                     case NUMERIC:
+                        
                         if(DateUtil.isCellDateFormatted(cell)){
-                            System.out.println(cell.getDateCellValue());
+                           {
+                            System.out.println(cell.getDateCellValue());}
                         }else{
                             System.out.println(cell.getNumericCellValue());
                         }
@@ -73,13 +113,6 @@ public class ReadFile {
                         System.out.println();
                         }
                         
-                            
-                }
-            }
-    }
-}
-        
-        
-        
+                            */
     
 
