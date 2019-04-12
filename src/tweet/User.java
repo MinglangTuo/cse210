@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication1;
+package tweet;
 
 /**
  *
  * @author 13982
  */
-public class Link {
+public class User {
     private String Tweet_Id;
     private String Date;
     private String Hour;
@@ -22,16 +22,14 @@ public class Link {
     private String Longitude;
     private String Followers;
     
-    public Link next;   //the link to connect the next link
     
-    
-  
+   public User(){}
     
     
     
     
     /*the construct to generate the link*/
-    public Link(String Tweet_Id, String Date,String Hour,String User_name, String Nick_name,String Tweet_content,String Favs,String RTs,String Latitude,String Longitude,String Followers){
+    public User(String Tweet_Id, String Date,String Hour,String User_name, String Nick_name,String Tweet_content,String Favs,String RTs,String Latitude,String Longitude,String Followers){
         
         this.Tweet_Id = Tweet_Id;
         this.Date = Date;
@@ -47,16 +45,7 @@ public class Link {
         
     }
     
-    /*to display the information to any link*/
-    public void display(){
-        System.out.println("Tweet_Id: "+Tweet_Id+" Date: "+Date+" Hour: "+Hour+" User_name: "+User_name+" Nick_name: "+Nick_name+" Tweet_content: "+Tweet_content+" Favs: "+Favs+" RTs: "+RTs+" Latitude: "+Latitude+" Longitude: "+Longitude+" Followers: "+Followers);
-    }
     
-    
-    
-    public String toString(){
-        return Tweet_Id;
-    }
     
     public String getTweet_Id(){
         return Tweet_Id;
@@ -80,6 +69,11 @@ public class Link {
          return numberFollowers;
     }
     
+    
+        @Override
+    public String toString(){
+        return "Tweet_Id: "+Tweet_Id+"\nDate: "+Date+"\nHour: "+Hour+"\nUser_name: "+User_name+"\nNick_name: "+Nick_name+"\nTweet_content: "+Tweet_content+"\nFavs: "+Favs+"\nRTs: "+RTs+"\nLatitude: "+Latitude+"\nLongitude: "+Longitude+"\nFollowers: "+Followers;
+    }
     
     
     

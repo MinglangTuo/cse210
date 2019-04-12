@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package javaapplication1;
+package util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author Tyler.Tuo
  */
-public class ReadFile {
+public class ExcelUtil {
     
     
     
