@@ -20,3 +20,10 @@ the project using the apache POI to dispose the dataset from the excel
 (2)package util: this package contains three helper class. Class ExcelUtil is used for dealing with reading excel file and converting the data to the User.class. Class MergeSort.class is designed to sort the information and output the rank for the users. And final class is the MatchEngine.class, which implement the text sesarching.
 
 (3)package main: this package contains the Main class, it can run different tasks by inputting different parameters.
+
+
+1.3 the knowledge about task(1) and (2)
+
+It is important to use the user.class to implements comparator and comparation to rank the arraylist and just print out the last 10 lists.
+
+It's very simple.
