@@ -5,11 +5,13 @@
  */
 package tweet;
 
+import java.util.Comparator;
+
 /**
  *
  * @author 13982
  */
-public class User {
+public class User implements Comparable<User>{
     private String Tweet_Id;
     private String Date;
     private String Hour;
@@ -70,17 +72,21 @@ public class User {
     }
     
     
-        @Override
+    @Override
     public String toString(){
         return "Tweet_Id: "+Tweet_Id+"\nDate: "+Date+"\nHour: "+Hour+"\nUser_name: "+User_name+"\nNick_name: "+Nick_name+"\nTweet_content: "+Tweet_content+"\nFavs: "+Favs+"\nRTs: "+RTs+"\nLatitude: "+Latitude+"\nLongitude: "+Longitude+"\nFollowers: "+Followers;
     }
-    
-    
-    
-    
+
+    @Override
+    public int compareTo(User o) {
+        
+        
+        return this.getFavs()+this.getRTs()-o.getFavs()-o.getRTs();
+    }
+
+  
     /**
      * @param args the command line arguments
-     */
-
-    
+     */  
 }
+
