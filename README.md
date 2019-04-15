@@ -33,7 +33,6 @@ It's very simple.
 task（2）
 
 It needs to estimate merging the same users who have same user name and nick name. Then using the comparator to compare. And print out 
-
 the last 10 elements of list.
 
 task(3)
