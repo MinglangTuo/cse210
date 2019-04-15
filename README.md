@@ -22,8 +22,35 @@ the project using the apache POI to dispose the dataset from the excel
 (3)package main: this package contains the Main class, it can run different tasks by inputting different parameters.
 
 
-1.3 the knowledge about task(1) and (2)
+1.3 the knowledge
 
-It is important to use the user.class to implements comparator and comparation to rank the arraylist and just print out the last 10 lists.
+task(1) 
+
+It is important to use the user.class to implements Comparable to rank the arraylist and just print out the last 10 elements of list.
 
 It's very simple.
+
+task（2）
+
+It needs to estimate merging the same users who have same user name and nick name. Then using the comparator to compare. And print out 
+
+the last 10 elements of list.
+
+task(3)
+
+Using regular expression to extract the keyword in user.tweet_content.
+
+task(4)
+
+....
+
+task(5)
+
+javadoc..
+
+
+1.4 the Test
+
+Test the result and compare the result by using the excel
+
+
