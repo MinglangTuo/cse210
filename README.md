@@ -30,7 +30,11 @@ It is important to use the user.class to implements Comparable to rank the array
 
 It's very simple.
 
-task（2）
+
+
+
+
+task(2)
 
 It needs to estimate merging the same users who have same user name and nick name. Then using the comparator to compare. And print out 
 the last 10 elements of list.
