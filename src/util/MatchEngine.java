@@ -6,10 +6,16 @@
 
 package util;
 
+import tweet.User;
+
 /**
  *
  * @author Tyler.Tuo
  */
 public class MatchEngine {
+    
+    public User Text_matching(String key){
+        
+    } 
     
 }

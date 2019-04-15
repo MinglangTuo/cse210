@@ -5,7 +5,9 @@
  */
 package tweet;
 
+
 import java.util.Comparator;
+
 
 /**
  *
@@ -53,6 +55,30 @@ public class User implements Comparable<User>{
         return Tweet_Id;
     }
     
+    public String getDate(){
+        return Date;
+    }
+    
+    public String getTime(){
+        return Hour;
+    }
+    
+    
+    public String getUser_name(){
+        
+    return User_name;
+    
+    }
+    
+    public String getNick_name(){
+        
+    return Nick_name;
+        
+    }
+    
+    
+    
+    
     /*get the number of Favs*/
     public int getFavs(){
         int numberFavs = Integer.parseInt(Favs);
@@ -71,12 +97,18 @@ public class User implements Comparable<User>{
          return numberFollowers;
     }
     
+    public void setFollowers(int number){
+        this.Followers =  String.valueOf(number); 
+    }
+    
     
     @Override
     public String toString(){
         return "Tweet_Id: "+Tweet_Id+"\nDate: "+Date+"\nHour: "+Hour+"\nUser_name: "+User_name+"\nNick_name: "+Nick_name+"\nTweet_content: "+Tweet_content+"\nFavs: "+Favs+"\nRTs: "+RTs+"\nLatitude: "+Latitude+"\nLongitude: "+Longitude+"\nFollowers: "+Followers;
     }
 
+    
+    /*the method is compare the RTs and Favs*/
     @Override
     public int compareTo(User o) {
         
@@ -84,9 +116,12 @@ public class User implements Comparable<User>{
         return this.getFavs()+this.getRTs()-o.getFavs()-o.getRTs();
     }
 
+    
+  
+    
+    
   
     /**
      * @param args the command line arguments
      */  
 }
-

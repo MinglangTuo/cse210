@@ -6,8 +6,11 @@
 
 package tweet;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import tweet.User;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  *
@@ -16,7 +19,7 @@ import java.util.LinkedList;
 public class Tweet {
 private LinkedList<User> users;
 private int Favs_RTs = 0;
-
+public Map<String,User> map = new HashMap<String,User>();  //judge the same name
 
 
 public Tweet(){
@@ -49,6 +52,34 @@ public void FindTop(){
     
     
 }
+
+    
+    /* the method is merge the same users*/
+    public ArrayList<User>mergeUsers(ArrayList<User> users){
+        
+        
+        for(User i: users){
+            String key = i.getUser_name()+i.getNick_name();
+            if(map.containsKey(key)){
+                User user = map.get(key);
+                int Followers = user.GetFollowers();
+                int anotherFollowers = i.GetFollowers();
+                if(Followers>anotherFollowers){
+                    i = user;
+                }
+            }
+            map.put(key, i);
+        }
+        
+        users.clear();
+        users.addAll(map.values());
+        
+        return users;
+        
+}
+    
+
+
 
 
 

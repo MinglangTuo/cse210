@@ -18,6 +18,9 @@ import tweet.User;
 
 class Ratingfollowers implements Comparator<User>{
 
+    
+    
+    /*The method is compare the followers*/
     @Override
     public int compare(User o1, User o2) {
         if(o1.GetFollowers()<o2.GetFollowers()) return -1;
@@ -32,24 +35,27 @@ public class Sort {
      * @param args the command line arguments
      */
     
-        public void sortByFavsRTs(ArrayList<User> users){
+    
+        /*the method is compare RTs and retweet*/
+        public ArrayList<User>sortByFavsRTs(ArrayList<User> users){
           Collections.sort(users);        //comparable 接口特定使用的方法  --时间排序
          
          System.out.println("tweet after sorting by Fans and RTs: ");
          
-         for(User user: users){
-             System.out.println(user);
-         }
+         return users;
         }
     
-        public void sortByFollows(ArrayList<User> users){
+        
+        
+        
+        /*The method is compare the followers*/
+        public ArrayList<User>sortByFollows(ArrayList<User> users){
         Ratingfollowers ratingfollowers = new Ratingfollowers();
          Collections.sort(users,ratingfollowers);
        
           System.out.println("tweet after sorting by Followers: ");
-         for(User user: users){
-             System.out.println(user);
-         }
+            
+          return users;
          
          
         }
