@@ -3,15 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/main/main.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/MatchEngine.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/tweet/User.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/Sort.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/ExcelUtil.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/tweet/Tweet.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/hashmap.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/exception.java</file>
-            <file>file:/C:/Users/Tyler.Tuo/Documents/GitHub/cse210/src/util/Student.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/poi-4.0.1/docs/apidocs/dev/allclasses-noframe.html</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/Lucene/LuceneConstants.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/main/main.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/Lucene/TextFileFilter.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/util/MatchEngine.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/tweet/Tweet.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/Lucene/Searcher.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/tweet/User.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/Lucene/Indexer.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/Lucene/test.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/util/ExcelUtil.java</file>
+            <file>file:/C:/Users/13982/Documents/GitHub/cse210/src/util/Sort.java</file>
         </group>
     </open-files>
 </project-private>

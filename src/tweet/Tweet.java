@@ -18,7 +18,6 @@ import java.util.Map;
  */
 public class Tweet {
 private LinkedList<User> users;
-private int Favs_RTs = 0;
 public Map<String,User> map = new HashMap<String,User>();  //judge the same name
 
 
@@ -40,20 +39,6 @@ public void addTweet(User user){
     users.add(user);
 }
 
-
-public void FindTop(){
-    User temporary = new User();
-    for(int i=0;i<users.size();i++){
-        
-        temporary = users.get(i);
-        Favs_RTs = temporary.getFavs()+temporary.getRTs();
-    }
-    
-    
-    
-}
-
-    
     /* the method is merge the same users*/
     public ArrayList<User>mergeUsers(ArrayList<User> users){
         

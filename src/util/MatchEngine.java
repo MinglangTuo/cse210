@@ -6,6 +6,8 @@
 
 package util;
 
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 import tweet.User;
 
 /**
@@ -14,8 +16,34 @@ import tweet.User;
  */
 public class MatchEngine {
     
-    public User Text_matching(String key){
+    public static void main(String[] args){
+        MatchEngine engine = new MatchEngine();
         
-    } 
+    }
+    
+    
+    
+    /*the method is for Text matching*/
+    public void Text_matching(ArrayList<User> user, String key){
+        String content = "";
+        String pattern = ".*"+key+".*";
+        
+        for(User i: user){
+            content = i.toString();
+            boolean isMatch = Pattern.matches(pattern,content);
+            if(isMatch){
+                System.out.println("content");
+            }
+            isMatch = false;
+        }
+    }
+    
+    
+    public void ful_textMatching(ArrayList<User> user, String key){
+        
+    }
+    
+    
+    
     
 }
