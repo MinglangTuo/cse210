@@ -10,10 +10,11 @@ import java.util.Comparator;
 
 
 /**
- *this class represnts the relevent information about a user.
+ *<h1>print the information about user</h1>
+ *<p>this class represnts the relevent information about a user, and by some of get methods to obtain the information. Besides, it 
+ implement the Comparable interface to compare the information.</p>
  *@author: Tyler 
  *@version V1.0
- *@???????????????????????????????????
  */
 public class User implements Comparable<User>{
    /**
