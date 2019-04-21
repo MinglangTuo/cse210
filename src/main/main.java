@@ -21,15 +21,22 @@ import util.MatchEngine;
 import util.Sort;
 
 /**
- *
- * @author Tyler.Tuo
+ *this class is a test class that is
+ * used for run the main method
  */
 public class main {
+    /**
+     *the option is the choice you want to select in the system
+     *other parameters is the system parameters.
+     */
+     private String option;
+     private int rank = 1;
+     private String key;
+     private boolean loop = true;
+    
+    
     public static void main(String[] args) throws ParseException, IOException, QueryNodeException{
-        String option;
-        int rank = 1;
-        String key;
-        boolean loop = true;
+       
         
         ExcelUtil excel = new ExcelUtil();
         ArrayList<User> rankList = new ArrayList();  //list1 for retweet and Favs
