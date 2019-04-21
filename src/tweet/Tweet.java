@@ -21,7 +21,8 @@ public class Tweet {
     /**
 	 * representing designing a tweet(users) by using linkedlist for users.
 	 */
-private LinkedList<User> tweet;
+	private LinkedList<User> users;
+	//!!!!!!!!!!private LinkedList<User> tweet;
     
     /**
 	 * representing one User correspond one number of followers.
@@ -40,7 +41,7 @@ public Tweet(){
 	 * construct method with parameters
 	 * @param users a linkedList that stores tweet(users).
 	 */
-public Tweet(LinkedList<User> tweet){
+public Tweet(LinkedList<User> users){  //!!!!!!!!!!!public Tweet(LinkedList<User> tweet){
         users = this.users;
 }
 
@@ -65,7 +66,9 @@ public void addTweet(User user){
 	 * @param users(tweet) all of the users in the tweet.
      * @return return the new linkedList of users(without the same)
 	 */
-    public LinkedList<User>mergeUsers(LinkedList<User> tweet){
+	public ArrayList<User>mergeUsers(ArrayList<User> users){
+        
+    //!!!!!!!!!!!!!public LinkedList<User>mergeUsers(LinkedList<User> tweet){
         
         
         for(User i: users){
