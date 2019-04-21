@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.flexible.core.QueryNodeException;
 import tweet.Tweet;
 import tweet.User;
 import util.ExcelUtil;
@@ -24,10 +25,11 @@ import util.Sort;
  * @author Tyler.Tuo
  */
 public class main {
-    public static void main(String[] args) throws ParseException, IOException{
-        int option;
+    public static void main(String[] args) throws ParseException, IOException, QueryNodeException{
+        String option;
         int rank = 1;
         String key;
+        boolean loop = true;
         
         ExcelUtil excel = new ExcelUtil();
         ArrayList<User> rankList = new ArrayList();  //list1 for retweet and Favs
@@ -36,18 +38,19 @@ public class main {
         
         System.out.println("please select options:\n 1.print top 10 tweets(based on the Favs and RTs) and print the relevent information about the tweet"
                 + "\n 2.print top 10 users(users are ranked based on followers)\n"+" 3.tweet search engine based on string matching\n"+
-                " 4.tweet search engine based on full text searching(using Lucene)\n");
+                " 4.tweet search engine based on full text searching(using Lucene)\n"+" 5.exit the system!");
         
+         
+         
+         
+         
+         
+     while(loop){   
          Scanner sc = new Scanner(System.in);
-         option = sc.nextInt();
-         
-         
-         
-         
-        
+         option = sc.next();
      switch(option){
         
-        case '1': 
+        case "1": 
         rankList = sort.sortByFavsRTs(rankList);        //sorted by RTs and Favs
          
          for(int i =rankList.size()-1;i>rankList.size()-11;i--){
@@ -56,9 +59,11 @@ public class main {
             System.out.println(" ");
             rank++;
         }
+         System.out.println("please select another option");
+         
          break;
          
-        case '2':
+        case "2":
          Tweet tweet = new Tweet();
          rankList = tweet.mergeUsers(rankList);
          rankList = sort.sortByFollows(rankList);
@@ -70,30 +75,44 @@ public class main {
             rank++;
          
             }
+         
+         System.out.println("please select another option");
             break;
             
-       case '3':
+       case "3":
          System.out.println("please input what you want to search (common method):");
          Scanner sc1 = new Scanner(System.in);
          key = sc1.next();
          
           MatchEngine engine = new MatchEngine();
           engine.Text_matching(rankList, key);
+          
+          System.out.println("please select another option");
         break;
           
-        case '4':
+        case "4":
          System.out.println("please input what you want to search (Lucene):");
          Scanner sc2 = new Scanner(System.in);
          key = sc2.next();
          
          Lucene_MatchEngine LuceneEngine = new Lucene_MatchEngine();
-         LuceneEngine.full_textMatching(rankList,key,args);
+         LuceneEngine.full_textMatching(rankList,key);
+         
+         System.out.println("please select another option");
         break;
         
+        case "5":
+            System.out.println("exit");
+            loop = false;
+            break;
+            
         default:
         System.out.println("useless input!");
+        System.out.println("please select another option");
         break;
         
+     }
+    
     }
     }
 }
