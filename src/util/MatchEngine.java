@@ -6,8 +6,10 @@
 
 package util;
 
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+
 import tweet.User;
 
 /**
@@ -29,19 +31,16 @@ public class MatchEngine {
         String pattern = ".*"+key+".*";
         
         for(User i: user){
-            content = i.toString();
+            content = i.getTweet_content();
             boolean isMatch = Pattern.matches(pattern,content);
             if(isMatch){
-                System.out.println("content");
+                System.out.println("content is"+content);
             }
             isMatch = false;
         }
     }
     
-    
-    public void ful_textMatching(ArrayList<User> user, String key){
-        
-    }
+
     
     
     

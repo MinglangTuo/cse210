@@ -49,6 +49,10 @@ public class User implements Comparable<User>{
         
     }
     
+     public String getTweet_content(){
+        return Tweet_content;
+    }
+    
     
     
     public String getTweet_Id(){

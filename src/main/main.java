@@ -8,11 +8,14 @@ package main;
 
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import org.apache.lucene.queryparser.classic.ParseException;
 import tweet.Tweet;
 import tweet.User;
 import util.ExcelUtil;
+import util.Lucene_MatchEngine;
 import util.MatchEngine;
 import util.Sort;
 
@@ -21,54 +24,76 @@ import util.Sort;
  * @author Tyler.Tuo
  */
 public class main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParseException, IOException{
+        int option;
         int rank = 1;
-        
+        String key;
         
         ExcelUtil excel = new ExcelUtil();
-        ArrayList<User> rankList1 = new ArrayList();  //list1 for retweet and Favs
-        ArrayList<User> rankList2 = new ArrayList();  //list2 for followers
-        ArrayList<User> textMatch = new ArrayList();  //list3 for textMatch
+        ArrayList<User> rankList = new ArrayList();  //list1 for retweet and Favs
+        rankList = excel.dealDataset("excel.xlsx");  //the arraylist from deal by excel.
+         Sort sort = new Sort();                  //the sort object 
         
-        rankList1 = excel.dealDataset("excel.xlsx");  //the arraylist from deal by excel.
-        rankList2 = rankList1;
-        textMatch = rankList1;
+        System.out.println("please select options:\n 1.print top 10 tweets(based on the Favs and RTs) and print the relevent information about the tweet"
+                + "\n 2.print top 10 users(users are ranked based on followers)\n"+" 3.tweet search engine based on string matching\n"+
+                " 4.tweet search engine based on full text searching(using Lucene)\n");
         
-         Sort sort = new Sort();                  //the sort object
-         
-         rankList1 = sort.sortByFavsRTs(rankList1);        //sorted by RTs and Favs
-         
-         for(int i =rankList1.size()-1;i>rankList1.size()-11;i--){
-            
-            System.out.println("the top "+rank+" of the RTs and Favs is------\n"+rankList1.get(i));
-            System.out.println(" ");
-            rank++;
-        }
-         
-         /*
-         Tweet tweet = new Tweet();
-         rankList2 = tweet.mergeUsers(rankList2);
-         rankList2 = sort.sortByFollows(rankList2);
-         rank = 1;
-         for(int i =rankList2.size()-1;i>rankList2.size()-11;i--){
-            
-            System.out.println("the top "+rank+" of followers is------\n"+rankList2.get(i));
-            System.out.println(" ");
-            rank++;
-         
-         
-         
-         
-        }
-       */
          Scanner sc = new Scanner(System.in);
-         String key = sc.next();
+         option = sc.nextInt();
+         
+         
+         
+         
+        
+     switch(option){
+        
+        case '1': 
+        rankList = sort.sortByFavsRTs(rankList);        //sorted by RTs and Favs
+         
+         for(int i =rankList.size()-1;i>rankList.size()-11;i--){
+            
+            System.out.println("the top "+rank+" of the RTs and Favs is------\n"+rankList.get(i));
+            System.out.println(" ");
+            rank++;
+        }
+         break;
+         
+        case '2':
+         Tweet tweet = new Tweet();
+         rankList = tweet.mergeUsers(rankList);
+         rankList = sort.sortByFollows(rankList);
+         rank = 1;
+         for(int i =rankList.size()-1;i>rankList.size()-11;i--){
+            
+            System.out.println("the top "+rank+" of followers is------\n"+rankList.get(i));
+            System.out.println(" ");
+            rank++;
+         
+            }
+            break;
+            
+       case '3':
+         System.out.println("please input what you want to search (common method):");
+         Scanner sc1 = new Scanner(System.in);
+         key = sc1.next();
          
           MatchEngine engine = new MatchEngine();
-          engine.Text_matching(textMatch, key);
+          engine.Text_matching(rankList, key);
+        break;
+          
+        case '4':
+         System.out.println("please input what you want to search (Lucene):");
+         Scanner sc2 = new Scanner(System.in);
+         key = sc2.next();
          
-         
+         Lucene_MatchEngine LuceneEngine = new Lucene_MatchEngine();
+         LuceneEngine.full_textMatching(rankList,key,args);
+        break;
         
+        default:
+        System.out.println("useless input!");
+        break;
         
+    }
     }
 }
