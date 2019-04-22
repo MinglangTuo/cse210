@@ -78,7 +78,7 @@ public class Lucene_MatchEngine {
       private static void addDoc(IndexWriter w, String content) throws IOException {
       Document doc = new Document();
         doc.add(new TextField("content", content, Field.Store.YES));
-
+        doc.add(new Field("content",content,TextField.Store.YES));
       
         w.addDocument(doc);
       
